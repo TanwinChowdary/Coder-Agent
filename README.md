@@ -1,4 +1,4 @@
-# 🧠 Project Builder Agent
+# 🧠 Coder Agent (web application builder)
 
 ## 📌 Introduction
 This project is a simple but powerful example of an **agentic AI system**, built using modern GenAI tools. Instead of being a normal “chat with an AI” setup, this tool behaves more like a small team of assistants working together. Each assistant has a specific role—one plans, one designs, and one writes the code—and they hand off work to each other in a clear, structured workflow. This makes it different from a single-shot prompt you send to a language model. Here, the model follows a multi-step reasoning process that you can actually see unfold.

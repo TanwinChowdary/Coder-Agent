@@ -69,4 +69,4 @@ All file edits go through restricted tools:
 - UI dashboard  
 
 ## 📝 License
-MIT (or specify your preferred license)
+MIT

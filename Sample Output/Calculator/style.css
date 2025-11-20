@@ -1,0 +1,156 @@
+/*
+ * style.css – Visual design and responsive layout for the calculator
+ * Implements custom properties, Flexbox centering, card styling, grid button layout,
+ * button variants, hover/focus states, and a mobile‑friendly media query.
+ */
+
+/* ---------------------------------------------------------------
+ * 1. CSS Custom Properties (Design Tokens)
+ * --------------------------------------------------------------- */
+:root {
+  /* Primary palette */
+  --color-primary: #2c3e50;            /* dark slate for background */
+  --color-bg-card: #ffffff;            /* card background */
+  --color-display-bg: #f0f0f0;        /* display background */
+  --color-operator-bg: #ff9500;       /* orange operator buttons */
+  --color-equals-bg: #34c759;         /* green equals button */
+  --color-neutral-bg: #e0e0e0;        /* clear / backspace */
+  --color-text-primary: #333333;      /* default text */
+  --color-text-light: #ffffff;        /* text on colored buttons */
+
+  /* Sizing */
+  --button-size: 60px;                /* default button height */
+  --button-font: 1.2rem;              /* default button font size */
+  --display-font: 2rem;               /* display font size */
+  --spacing: 1rem;                    /* general spacing */
+  --border-radius: 0.5rem;            /* rounded corners */
+}
+
+/* ---------------------------------------------------------------
+ * 2. Global Layout – Center the calculator using Flexbox
+ * --------------------------------------------------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------------
+ * 3. Calculator Card Styling
+ * --------------------------------------------------------------- */
+#calculator {
+  max-width: 400px;
+  width: 100%;
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: var(--spacing);
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------
+ * 4. Display Styling
+ * --------------------------------------------------------------- */
+.display {
+  width: 100%;
+  height: calc(var(--button-size) * 0.8);
+  font-size: var(--display-font);
+  text-align: right;
+  padding: 0.5rem;
+  margin-bottom: var(--spacing);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background: var(--color-display-bg);
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------
+ * 5. Buttons Grid Layout
+ * --------------------------------------------------------------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem; /* row & column gap */
+}
+
+/* Base button styling */
+button.btn {
+  height: var(--button-size);
+  font-size: var(--button-font);
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--color-neutral-bg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  /* Ensure button fills its grid cell */
+  width: 100%;
+  padding: 0;
+}
+
+button.btn:focus {
+  outline: 2px solid #0066ff;
+  outline-offset: 2px;
+}
+
+button.btn:hover {
+  background: #d5d5d5;
+}
+
+/* Operator button variant */
+button.operator {
+  background: var(--color-operator-bg);
+  color: var(--color-text-light);
+}
+
+button.operator:hover {
+  background: #e68a00; /* slightly darker on hover */
+}
+
+/* Equals button – larger (spans two columns) */
+button.equals {
+  background: var(--color-equals-bg);
+  color: var(--color-text-light);
+  grid-column: span 2;
+}
+
+button.equals:hover {
+  background: #28a745;
+}
+
+/* Clear / Backspace – neutral background (already default) */
+button.clear,
+button.backspace {
+  background: var(--color-neutral-bg);
+}
+
+button.clear:hover,
+button.backspace:hover {
+  background: #c8c8c8;
+}
+
+/* Zero button – often spans two columns (inline style already sets grid-column) */
+button.zero {
+  /* No extra styling needed beyond the grid‑column set in HTML */
+}
+
+/* ---------------------------------------------------------------
+ * 6. Responsive Adjustments for Mobile (≤ 600px)
+ * --------------------------------------------------------------- */
+@media (max-width: 600px) {
+  :root {
+    --button-size: 48px;
+    --button-font: 1rem;
+    --display-font: 1.5rem;
+    --spacing: 0.75rem;
+  }
+
+  .buttons {
+    gap: 0.4rem;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="calculator" class="calculator">
+        <input type="text" id="display" class="display" readonly aria-label="Calculator display" />
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn clear" data-value="C" aria-label="clear">C</button>
+            <button class="btn backspace" data-value="←" aria-label="backspace">←</button>
+            <button class="btn operator" data-value="/" aria-label="divide">/</button>
+            <button class="btn operator" data-value="*" aria-label="multiply">*</button>
+            <!-- Row 2 -->
+            <button class="btn" data-value="7" aria-label="seven">7</button>
+            <button class="btn" data-value="8" aria-label="eight">8</button>
+            <button class="btn" data-value="9" aria-label="nine">9</button>
+            <button class="btn operator" data-value="-" aria-label="subtract">-</button>
+            <!-- Row 3 -->
+            <button class="btn" data-value="4" aria-label="four">4</button>
+            <button class="btn" data-value="5" aria-label="five">5</button>
+            <button class="btn" data-value="6" aria-label="six">6</button>
+            <button class="btn operator" data-value="+" aria-label="add">+</button>
+            <!-- Row 4 -->
+            <button class="btn" data-value="1" aria-label="one">1</button>
+            <button class="btn" data-value="2" aria-label="two">2</button>
+            <button class="btn" data-value="3" aria-label="three">3</button>
+            <button class="btn equals" data-value="=" aria-label="equals">=</button>
+            <!-- Row 5 -->
+            <button class="btn zero" data-value="0" aria-label="zero" style="grid-column: span 2;">0</button>
+            <button class="btn" data-value="." aria-label="decimal point">.</button>
+        </div>
+    </div>
+    <footer>
+        <small>© 2025 Simple Calculator</small>
+    </footer>
+</body>
+</html>
